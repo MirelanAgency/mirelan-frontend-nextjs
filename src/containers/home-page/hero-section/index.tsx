@@ -1,14 +1,15 @@
 import Link from "next/link"
 import React, {FC} from "react";
+import '@/app/globals.css';
 
-interface HeroSectionProps {}
+interface HeroSectionProps {
+}
 
 const HeroSection: FC<HeroSectionProps> = ({}) => {
-    return(
-        <section>
-            <p className="text-2xl">
-                ddqzdqzd
-            </p>
+    return (
+        <section className="font-poppins text-blue-600 text-9xl">
+            <div>
+            </div>
         </section>
     )
 }
