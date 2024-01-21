@@ -4,6 +4,7 @@ import Link from "next/link";
 import Brand from "@/components/Brand";
 import {HeaderNavs} from "@/components/Navbar/constants";
 import HeaderNav from "@/components/HeaderNav";
+import {Bars3Icon, XMarkIcon} from "@heroicons/react/24/solid";
 
 export default function Navbar() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -11,25 +12,25 @@ export default function Navbar() {
     return (
         <header className="w-full flex justify-center py-4 md:py-6 relative">
             <div className="w-full max-w-screen-2xl flex justify-between items-center px-4 md:px-0">
-                <Link href={"/"} className="mr-24">
+                <Link href={"/"}>
                     <Brand/>
                 </Link>
 
                 <div className="flex items-center">
-                    <nav className="hidden md:flex gap-10">
+                    <nav className="hidden xl:flex gap-10">
                         {HeaderNavs.map((el, _i) => (
                             <HeaderNav key={_i} value={el.value} id={el.id} href={el.href}/>
                         ))}
                     </nav>
 
-                    <div className="hidden md:flex mx-8 border-r border-black p-2"/>
+                    <div className="hidden xl:flex mx-8 border-r border-black p-2"/>
 
-                    <Link href="Connect" className="hidden md:flex text-black font-bold">
+                    <Link href="Connect" className="hidden xl:flex text-black font-bold">
                         Se connecter
                     </Link>
 
                     <button className="md:hidden" onClick={() => setIsMenuOpen(!isMenuOpen)}>
-                        {isMenuOpen ? <div className="h-6 w-6 bg-amber-500"/> : <div className="h-6 w-6 bg-amber-900"/>}
+                        {isMenuOpen ? <XMarkIcon className="h-6 w-6"/> : <Bars3Icon className="h-6 w-6"/>}
                     </button>
                 </div>
 
