@@ -2,6 +2,7 @@ import type {Metadata} from "next";
 import {Outfit} from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
+import { StickyNavbar } from "@/components/NavbarTest";
 
 const inter = Outfit({subsets: ["latin"]});
 
@@ -18,7 +19,9 @@ export default function RootLayout({
     return (
         <html lang="en">
         <body className={inter.className}>
-        <Navbar/>
+        {/* <Navbar/> */}
+
+        <StickyNavbar />
 
         {children}
 
